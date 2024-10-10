@@ -6,5 +6,5 @@
   <h2>JavaScript Main Page</h2>
   <h5>Title description, Sep 2, 2017</h5>
   <div class="fakeimg">Fake Image</div>
-
+  <hr class="d-sm-none">
 </div>
