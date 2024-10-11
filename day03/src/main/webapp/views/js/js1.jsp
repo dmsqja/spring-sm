@@ -16,7 +16,7 @@
     btn2.onclick = function(){
       let c = confirm('Are you going now ...');
       if(c == true){
-        location.href='<c:url value="/js/js2"/>';
+          location.href='<c:url value="/js/js2"/>';
       };
     };
   };
@@ -33,3 +33,4 @@
   <h6 id="id02">Header2</h6>
   <h6 id="id03">Header3</h6>
 </div>
+

@@ -3,7 +3,7 @@
 
 <div class="col-sm-10">
 
-  <h2>Chart1 Main Page</h2>
+  <h2>Chart1 Page</h2>
   <h5>Title description, Sep 2, 2017</h5>
 
 </div>

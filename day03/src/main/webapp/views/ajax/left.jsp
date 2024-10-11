@@ -3,10 +3,10 @@
 
 <div class="col-sm-2">
 
-  <h3>Ajax</h3>
+  <h3>AJAX</h3>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/ajax/ajax1"/>">ajax1</a>
+      <a class="nav-link" href="<c:url value="/ajax/ajax1"/> ">ajax1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<c:url value="/ajax/ajax2"/>">ajax2</a>

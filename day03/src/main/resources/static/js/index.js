@@ -57,31 +57,3 @@ let js5 = {
         $('#login_form').submit();
     }
 };
-
-let js6 ={
-    init:function(){
-        $('#signup_form > button').click(()=>{
-            this.check();
-        });
-    },
-    check:function(){
-        let id = $('#id').val();
-        let pwd = $('#pwd').val();
-        if(id == '' || id == null){
-            alert("ID IS MANDATORY");
-            $('#id').focus();
-            return;
-        }
-        if(pwd == '' || pwd == null){
-            alert("PWD IS MANDATORY");
-            $('#id').focus();
-            return;
-        }
-        this.send();
-    },
-    send:function(){
-        $('#signup_form').attr('method','post');
-        $('#signup_form').attr('action','/signupimpl');
-        $('#signup_form').submit();
-    }
-};

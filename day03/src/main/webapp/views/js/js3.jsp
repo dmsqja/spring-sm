@@ -15,11 +15,11 @@
 
   function getdata(){
     let datas = [
-      {'id':'id01','name':'james1','age':10},
-      {'id':'id02','name':'james2','age':20},
-      {'id':'id03','name':'james3','age':30},
-      {'id':'id04','name':'james4','age':40},
-      {'id':'id05','name':'james5','age':50}
+            {'id':'id01','name':'james1','age':10},
+            {'id':'id02','name':'james2','age':20},
+            {'id':'id03','name':'james3','age':30},
+            {'id':'id04','name':'james4','age':40},
+            {'id':'id05','name':'james5','age':50}
     ];
     display(datas);
   };
@@ -37,14 +37,20 @@
   <h5>Title description, Sep 2, 2017</h5>
   <table class="table" id="cdata">
     <thead class="thead-dark">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Age</th>
-    </tr>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
     </thead>
     <tbody>
 
     </tbody>
   </table>
 </div>
+
+
+
+
+
+

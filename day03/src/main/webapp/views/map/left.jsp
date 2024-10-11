@@ -6,7 +6,7 @@
   <h3>Map</h3>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/map/map1"/>">map1</a>
+      <a class="nav-link" href="<c:url value="/map/map1"/> ">map1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<c:url value="/map/map2"/>">map2</a>

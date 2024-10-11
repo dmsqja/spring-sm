@@ -84,12 +84,12 @@
 <div class="container" style="margin-top:30px">
     <div class="row">
         <c:choose>
-            <c:when test="${left == null}">
-                <jsp:include page="left.jsp"/>
-            </c:when>
-            <c:otherwise>
-                <jsp:include page="${left}.jsp"/>
-            </c:otherwise>
+          <c:when test="${left == null}">
+              <jsp:include page="left.jsp"/>
+          </c:when>
+          <c:otherwise>
+              <jsp:include page="${left}.jsp"/>
+          </c:otherwise>
         </c:choose>
         <c:choose>
             <c:when test="${center == null}">

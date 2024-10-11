@@ -13,25 +13,25 @@ public class AjaxController {
     String dir = "ajax/";
 
     @RequestMapping("")
-    public String ajax(Model model){
+    public String ajax(Model model) {
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"center");
         return "index";
     }
     @RequestMapping("/ajax1")
-    public String ajax1(Model model){
+    public String js1(Model model) {
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"ajax1");
         return "index";
     }
     @RequestMapping("/ajax2")
-    public String ajax2(Model model){
+    public String js2(Model model) {
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"ajax2");
         return "index";
     }
     @RequestMapping("/ajax3")
-    public String ajax3(Model model){
+    public String js3(Model model) {
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"ajax3");
         return "index";

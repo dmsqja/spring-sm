@@ -7,20 +7,20 @@
   <h5>Title description, Sep 2, 2017</h5>
   <table class="table">
     <thead class="thead-dark">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Age</th>
-    </tr>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
     </thead>
     <tbody>
-    <c:forEach var="c" items="${custs}">
-      <tr>
-        <td>${c.id}</td>
-        <td>${c.pwd}</td>
-        <td>${c.name}</td>
-      </tr>
-    </c:forEach>
+      <c:forEach var="c" items="${custs}">
+        <tr>
+          <td>${c.id}</td>
+          <td>${c.pwd}</td>
+          <td>${c.name}</td>
+        </tr>
+      </c:forEach>
     </tbody>
   </table>
 </div>
