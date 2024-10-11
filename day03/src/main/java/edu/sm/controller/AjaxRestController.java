@@ -17,6 +17,9 @@ public class AjaxRestController {
         JSONObject obj = new JSONObject();
         // {'ctime','2023-12-12'}
         LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
+        String ctime = formatter.format(now);
         obj.put("ctime", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(now));
         return obj;
     }
