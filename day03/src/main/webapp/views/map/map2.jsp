@@ -81,9 +81,17 @@
           {lat:37.578911, lng:126.978409, title:'순대국3', img:'ss3.jpg', code:103}
         ];
       }else if(target == 200){
-
+        datas = [
+          {lat:35.158720, lng:129.171178, title:'횟집1', img:'bb1.jpg', code:201},
+          {lat:35.159917, lng:129.157196, title:'횟집2', img:'bb2.jpg', code:202},
+          {lat:35.166329, lng:129.157862, title:'횟집3', img:'bb3.jpg', code:203}
+        ]
       }else{
-
+        datas =[
+          {lat:33.490366, lng:126.481458, title:'말고기1', img:'jj1.jpg', code:301},
+          {lat:33.483865, lng:126.504265, title:'말고기2', img:'jj2.jpg', code:302},
+          {lat:33.499033, lng:126.495026, title:'말고기3', img:'jj3.jpg', code:303}
+        ]
       }
       let imgsrc1 = 'https://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png';
       let imgsrc2 = '<c:url value="/img/m.jpg"/>';
