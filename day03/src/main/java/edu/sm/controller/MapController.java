@@ -37,6 +37,13 @@ public class MapController {
         model.addAttribute("center",dir+"map3");
         return "index";
     }
+    @RequestMapping("/map4")
+    public String js4(Model model) {
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"map4");
+        return "index";
+    }
+
     @RequestMapping("/go")
     public String go(Model model, @RequestParam("target") int target) {
         model.addAttribute("target",target);
