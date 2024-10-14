@@ -10,6 +10,8 @@
 <script>
   let map2 = {
     init:function(){
+      this.makemap(37.548911, 126.948409, '서울여자중학교','seoul.jpg',100);
+
       $('#sbtn').click(()=>{
         // 37.548911, 126.948409
         this.makemap(37.548911, 126.948409, '서울여자중학교','seoul.jpg',100);
@@ -69,7 +71,7 @@
       };
       this.markers(target,map);
     },
-    markers:function(target){
+    markers:function(target,map){
       // lat, lng, title, img, code
       let datas = [];
       if(target == 100){
@@ -108,7 +110,7 @@
 
         function clickHandler(target){
           return function(){
-            location.href='<c:url value="/map/go?target='+target+'"/>';
+            location.href='<c:url value="/map/go?target='+target+'"/> ';
           };
         };
         function overHandler(map,marker,infowindow){
