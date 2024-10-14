@@ -8,7 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="<c:url value="/js/index.js"/>"></script>
+    <script src="<c:url value="/js/index.js"/> "></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=157bdc877f32c896ca389fe33a2374c4"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -84,12 +85,12 @@
 <div class="container" style="margin-top:30px">
     <div class="row">
         <c:choose>
-          <c:when test="${left == null}">
-              <jsp:include page="left.jsp"/>
-          </c:when>
-          <c:otherwise>
-              <jsp:include page="${left}.jsp"/>
-          </c:otherwise>
+            <c:when test="${left == null}">
+                <jsp:include page="left.jsp"/>
+            </c:when>
+            <c:otherwise>
+                <jsp:include page="${left}.jsp"/>
+            </c:otherwise>
         </c:choose>
         <c:choose>
             <c:when test="${center == null}">
