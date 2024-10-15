@@ -1,5 +1,6 @@
 package edu.sm.controller;
 
+import edu.sm.dto.Marker;
 import lombok.extern.slf4j.Slf4j;
 import netscape.javascript.JSObject;
 import org.json.simple.JSONArray;
@@ -12,10 +13,36 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @Slf4j
 public class AjaxRestController {
+    @RequestMapping("/getmarkers")
+    public Object getmarkers(@RequestParam("target") int target) {
+        List<Marker> markers = new ArrayList<Marker>();
+        if(target == 100){
+            markers.add(new Marker(37.564472,126.990841,"순대국1","ss1.jpg",101));
+            markers.add(new Marker(37.544472,126.970841,"순대국2","ss2.jpg",102));
+            markers.add(new Marker(37.564472,126.970841,"순대국3","ss3.jpg",103));
+        }else if(target == 200){
+            markers.add(new Marker(35.158720,129.171178,"횟집1","bb1.jpg",201));
+            markers.add(new Marker(35.159917,129.157196,"횟집2","bb2.jpg",202));
+            markers.add(new Marker(35.166329,129.157862,"횟집3","bb3.jpg",203));
+        }else if(target == 300){
+            markers.add(new Marker(33.247061,126.567452,"흑돼지1","jj1.jpg",301));
+            markers.add(new Marker(33.248496,126.561658,"흑돼지2","jj2.jpg",302));
+            markers.add(new Marker(33.251332,126.559727,"흑돼지3","jj3.jpg",303));
+        }else if(target == 400){
+            markers.add(new Marker(36.341617, 127.392739, "빵집1","dd1.jpg",401));
+            markers.add(new Marker(36.360697, 127.378981, "빵집2","dd2.jpg",402));
+            markers.add(new Marker(36.352195, 127.395718, "빵집3","dd3.jpg",403));
+        }
+        return markers;
+    }
+
+
     @RequestMapping("/checkid")
     public Object checkid(@RequestParam("rid") String id){
         JSONObject obj = new JSONObject();
