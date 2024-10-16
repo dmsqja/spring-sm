@@ -12,3 +12,9 @@ spring:
 logging:
   level:
     root: info
+
+
+app:
+  dir:
+    imgdir: file:///c:/springsm/imgs/
+    logdir: file:///c:/springsm/logs/

@@ -6,7 +6,7 @@
   <h3>Chart</h3>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/chart/chart1"/> ">chart1</a>
+      <a class="nav-link" href="<c:url value="/chart/chart1"/>">chart1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<c:url value="/chart/chart2"/>">chart2</a>

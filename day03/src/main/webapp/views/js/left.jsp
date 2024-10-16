@@ -6,7 +6,7 @@
   <h3>JavaScript</h3>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/js/js1"/> ">js1</a>
+      <a class="nav-link" href="<c:url value="/js/js1"/>">js1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<c:url value="/js/js2"/>">js2</a>

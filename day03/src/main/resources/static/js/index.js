@@ -38,7 +38,7 @@ let js5 = {
         let id = $('#id').val();
         let pwd = $('#pwd').val();
         if(id == '' || id == null){
-            alert('Id is Mandatory');
+            alert('Id is Mandatory.....');
             $('#id').focus();
             return;
         }
