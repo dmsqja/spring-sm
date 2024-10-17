@@ -17,4 +17,5 @@ logging:
 app:
   dir:
     imgdir: file:///c:/springsm/imgs/
-    logdir: file:///c:/springsm/logs/
+    logdir: file:///c:/springsm/logs/ #저장할때는 앞에 file이 붙어야함
+    readlogdir: c:/springsm/logs/ # 이 위치에서 log를 가져온다 이거임

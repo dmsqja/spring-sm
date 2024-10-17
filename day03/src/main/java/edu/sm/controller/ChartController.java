@@ -20,19 +20,21 @@ public class ChartController {
     }
     @RequestMapping("/chart1")
     public String chart1(Model model) {
-        log.info("click");
+        log.info("click/chart1");
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"chart1");
         return "index";
     }
     @RequestMapping("/chart2")
     public String chart2(Model model) {
+        log.info("click/chart2");
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"chart2");
         return "index";
     }
     @RequestMapping("/chart3")
     public String chart3(Model model) {
+        log.info("click/chart3");
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"chart3");
         return "index";
