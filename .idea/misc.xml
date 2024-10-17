@@ -6,6 +6,8 @@
     <file type="web" url="file://$PROJECT_DIR$/day02-1" />
     <file type="web" url="file://$PROJECT_DIR$/day03" />
     <file type="web" url="file://$PROJECT_DIR$/day03_1" />
+    <file type="web" url="file://$PROJECT_DIR$/day03_iot" />
+    <file type="web" url="file://$PROJECT_DIR$/demo" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -16,7 +18,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
