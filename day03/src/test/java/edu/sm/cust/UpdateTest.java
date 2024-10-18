@@ -2,24 +2,22 @@ package edu.sm.cust;
 
 import edu.sm.app.dto.CustDto;
 import edu.sm.app.service.CustService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 @Slf4j
-class SelectTest {
+class UpdateTest {
     @Autowired
     CustService custService;
 
     @Test
-    void contextLoads() {
+    void contextLoads(){
+        CustDto custdto = CustDto.builder().id("id66").pwd("pwd66 ").name("이말자").build();
         try {
-            custService.get();
+            custService.modify(custdto);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

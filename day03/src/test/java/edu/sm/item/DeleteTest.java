@@ -1,25 +1,22 @@
-package edu.sm.cust;
+package edu.sm.item;
 
-import edu.sm.app.dto.CustDto;
-import edu.sm.app.service.CustService;
-import lombok.RequiredArgsConstructor;
+import edu.sm.app.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 @Slf4j
-class SelectTest {
+class DeleteTest {
     @Autowired
-    CustService custService;
+    ItemService itemService;
 
     @Test
-    void contextLoads() {
+    void contextLoads(){
+        String id= "2";
         try {
-            custService.get();
+            itemService.del(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

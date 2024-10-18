@@ -15,9 +15,8 @@ public class CustService implements SMService<String, CustDto> {
     final CustRepository custRepository;
 
     @Override
-    public CustDto add(CustDto custDto) throws Exception {
+    public void add(CustDto custDto) throws Exception {
         custRepository.insert(custDto);
-        return custDto;
     }
 
     @Override
@@ -38,5 +37,9 @@ public class CustService implements SMService<String, CustDto> {
     @Override
     public List<CustDto> get() throws Exception {
         return custRepository.select();
+    }
+
+    public List<CustDto> findByName(String name) throws Exception {
+        return custRepository.findByName(name);
     }
 }
