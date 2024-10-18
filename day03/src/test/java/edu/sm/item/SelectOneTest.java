@@ -1,6 +1,6 @@
-package edu.sm.cust;
+package edu.sm.item;
 
-import edu.sm.app.service.CustService;
+import edu.sm.app.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +10,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j
 class SelectOneTest {
     @Autowired
-    CustService custService;
+    ItemService itemService;
 
     @Test
     void contextLoads() {
 
-        String id = "id01";
+        String id = "1";
         try {
-            custService.get(id);
+            itemService.get(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

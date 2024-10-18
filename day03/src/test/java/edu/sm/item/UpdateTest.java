@@ -24,7 +24,7 @@ class UpdateTest {
                 .itemId(1)
                 .itemName("피카츄")
                 .itemPrice(2000L)
-                .imgName("피카츄 전기쥐 포켓몬")
+                .imgName("전기쥐 포켓몬")
                 .updateDate(LocalDateTime.now())
                 .build();
         try {

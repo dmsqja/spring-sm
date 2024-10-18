@@ -6,11 +6,11 @@
 
 
     <select id="findByName" resultType="custDto" parameterType="String">
-        SELECT * FROM cust WHERE name LIKE CONCAT('%','#{name}','%')
+        SELECT * FROM cust WHERE cust_name LIKE CONCAT('%',#{name},'%')
     </select>
 
     <select id="selectOne" parameterType="String" resultType="custDto">
-        SELECT * FROM cust WHERE id=#{id}
+        SELECT * FROM cust WHERE cust_id=#{id}
     </select>
 
     <select id="select" resultType="custDto">
@@ -22,11 +22,11 @@
     </insert>
 
     <update id="update" parameterType="custDto">
-        UPDATE cust SET pwd=#{pwd},name=#{name} WHERE id=#{id}
+        UPDATE cust SET cust_pwd=#{pwd},cust_name=#{name} WHERE cust_id=#{id}
     </update>
 
     <delete id="delete" parameterType="String">
-        DELETE FROM cust WHERE id=#{id}
+        DELETE FROM cust WHERE cust_id=#{id}
     </delete>
 
 </mapper>

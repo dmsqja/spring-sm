@@ -6,7 +6,7 @@
 
 
     <select id="findByName" resultType="itemDto" parameterType="String">
-        SELECT * FROM item WHERE item_name LIKE CONCAT('%','#{itemName}','%')
+        SELECT * FROM item WHERE item_name LIKE CONCAT('%',#{itemName},'%')
     </select>
 
     <select id="selectOne" parameterType="String" resultType="itemDto">

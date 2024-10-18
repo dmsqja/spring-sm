@@ -1,23 +1,25 @@
-package edu.sm.cust;
+package edu.sm.item;
 
-import edu.sm.app.service.CustService;
+import edu.sm.app.dto.ItemDto;
+import edu.sm.app.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 @Slf4j
-class SelectOneTest {
+class FindByNameTest {
     @Autowired
-    CustService custService;
+    ItemService itemService;
 
     @Test
     void contextLoads() {
-
-        String id = "id01";
+        String searchName = "피";
         try {
-            custService.get(id);
+            itemService.findByName(searchName);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
