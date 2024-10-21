@@ -4,6 +4,7 @@ import edu.sm.app.dto.CustDto;
 import edu.sm.app.frame.SMService;
 import edu.sm.app.repository.CustRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

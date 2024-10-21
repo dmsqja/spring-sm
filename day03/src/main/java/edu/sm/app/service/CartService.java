@@ -16,10 +16,10 @@ public class CartService implements SMService<CartDto, CartDto> {
 
     final CartRepository cartRepository;
 
+
     @Override
     public void add(CartDto cartDto) throws Exception {
         cartRepository.insert(cartDto);
-
     }
 
     @Override
@@ -46,4 +46,5 @@ public class CartService implements SMService<CartDto, CartDto> {
         return cartRepository.findByName(cartDto);
 
     }
+
 }
