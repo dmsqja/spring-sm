@@ -1,6 +1,5 @@
 package edu.sm.cart;
 
-
 import edu.sm.app.service.CartService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @Slf4j
-public class SelectTest {
+class SelectTest {
     @Autowired
     CartService cartService;
 
@@ -21,4 +20,5 @@ public class SelectTest {
             throw new RuntimeException(e);
         }
     }
+
 }

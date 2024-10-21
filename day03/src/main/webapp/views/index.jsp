@@ -52,7 +52,7 @@
         </c:when>
         <c:otherwise>
             <li class="nav-item">
-                <a class="nav-link" href="#">${sessionScope.loginid}</a>
+                <a class="nav-link" href="#">${sessionScope.loginid.custId}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/logoutimpl"/>">Logout</a>
@@ -70,7 +70,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/js"/> ">JS</a>
+                <a class="nav-link" href="<c:url value="/js" /> ">JS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/ajax"/> ">AJAX</a>

@@ -15,7 +15,7 @@ class UpdateTest {
 
     @Test
     void contextLoads(){
-        CustDto custdto = CustDto.builder().id("id66").pwd("pwd66 ").name("이말자").build();
+        CustDto custdto = CustDto.builder().custId("id66").custPwd("pwd66 ").custName("이말자").build();
         try {
             custService.modify(custdto);
         } catch (Exception e) {

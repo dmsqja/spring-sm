@@ -7,19 +7,19 @@
       $('#register_form > button').click(()=>{
         this.check();
       });
-      $("#id").keyup(()=>{
+      $('#id').keyup(()=>{
         $('#id_span').text('ID는 4자리 이상입니다.');
-        let id = $("#id").val();
+        let id = $('#id').val();
         if(id.length >= 4){
           $.ajax({
             url:'<c:url value="/checkid"/>',
             data:{'rid':id},
             success:function(data){
-              // alert(data.result);
+              //alert(data.result);
               if(data.result == 1){
-                $('#id_span').text('사용할 수 없는 아이디입니다.');
+                $('#id_span').text('사용할수 없습니다.');
               }else{
-                $('#id_span').text('사용할 수 있는 아이디입니다.');
+                $('#id_span').text('사용할수 있습니다.');
               }
             }
           });
@@ -46,12 +46,12 @@
         $('#name').focus();
         return;
       }
-
       this.send();
     },
     send:function(){
       // method, action
       $('#register_form').attr('method','post');
+
       $('#register_form').attr('action','/registerimpl');
       $('#register_form').submit();
     }
@@ -65,19 +65,19 @@
 <div class="col-sm-10">
   <h2>Register Page</h2>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-8">
       <form id="register_form">
         <div class="form-group">
           <label for="id">Id:<span id="id_span"></span></label>
-          <input type="text" class="form-control" placeholder="Enter id" id="id" name="id">
+          <input type="text" class="form-control" placeholder="Enter id" id="id" name="custId">
         </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="pwd">
+          <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="custPwd">
         </div>
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" class="form-control" placeholder="Enter name" id="name" name="name">
+          <input type="text" class="form-control" placeholder="Enter name" id="name" name="custName">
         </div>
         <button type="button" class="btn btn-primary">Submit</button>
       </form>

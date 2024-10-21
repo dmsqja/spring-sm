@@ -12,28 +12,29 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CartService implements SMService<Integer, CartDto> {
+public class CartService implements SMService<CartDto, CartDto> {
 
     final CartRepository cartRepository;
 
     @Override
-    public void add(CartDto itemDto) throws Exception {
-        cartRepository.insert(itemDto);
+    public void add(CartDto cartDto) throws Exception {
+        cartRepository.insert(cartDto);
+
     }
 
     @Override
-    public void modify(CartDto itemDto) throws Exception {
-        cartRepository.update(itemDto);
+    public void modify(CartDto cartDto) throws Exception {
+        cartRepository.update(cartDto);
     }
 
     @Override
-    public void del(Integer s) throws Exception {
-        cartRepository.delete(s);
+    public void del(CartDto cartDto) throws Exception {
+        cartRepository.delete(cartDto);
     }
 
     @Override
-    public CartDto get(Integer s) throws Exception {
-        return cartRepository.selectOne(s);
+    public CartDto get(CartDto cartDto) throws Exception {
+        return cartRepository.selectOne(cartDto);
     }
 
     @Override
@@ -41,7 +42,8 @@ public class CartService implements SMService<Integer, CartDto> {
         return cartRepository.select();
     }
 
-    public List<CartDto> findByName(String name) throws Exception {
-        return cartRepository.findByName(name);
+    public List<CartDto> findByName(CartDto cartDto){
+        return cartRepository.findByName(cartDto);
+
     }
 }

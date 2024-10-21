@@ -24,11 +24,8 @@ spring:
 mybatis:
   type-aliases-package: edu.sm.app.dto
   mapper-locations: classpath:/mapper/*.xml
-
-
-
-#configuration:
-#  map-underscore-to-camel-case: true
+  configuration:
+    map-underscore-to-camel-case: true
 
 # 4.Logging Setting
 logging:
@@ -39,5 +36,6 @@ logging:
 app:
   dir:
     imgdir: file:///c:/springsm/imgs/
+    # logdir: /root/users/project/logs 리눅스에서는 이렇게 쓰면 됨
     logdir: file:///c:/springsm/logs/ #저장할때는 앞에 file이 붙어야함
     readlogdir: c:/springsm/logs/ # 이 위치에서 log를 가져온다 이거임

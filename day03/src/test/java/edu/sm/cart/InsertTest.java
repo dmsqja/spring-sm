@@ -18,13 +18,8 @@ public class InsertTest {
 
     @Test
     void insertTest() {
-        CartDto cartDto = CartDto.builder()
-                .userId("id01")
-                .itemId(1)
-                .count(2)
-                .regDate(LocalDateTime.now())
-                .build();
-
+        CartDto cartDto =
+                CartDto.builder().cartCount(2).cartUserId("id02").cartItemId(2).build();
         try {
             cartService.add(cartDto);
         } catch (Exception e) {
