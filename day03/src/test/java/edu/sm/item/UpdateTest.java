@@ -23,7 +23,7 @@ class UpdateTest {
         ItemDto itemdto = ItemDto.builder()
                 .itemId(1)
                 .itemName("피카츄")
-                .itemPrice(2000L)
+                .itemPrice(2000)
                 .imgName("전기쥐 포켓몬")
                 .updateDate(LocalDateTime.now())
                 .build();

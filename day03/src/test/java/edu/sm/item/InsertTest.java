@@ -20,7 +20,7 @@ class InsertTest {
     void contextLoads(){
         ItemDto itemdto = ItemDto.builder()
                 .itemName("아이폰")
-                .itemPrice(400000L)
+                .itemPrice(400000)
                 .imgName("아이폰12미니져")
                 .regDate(LocalDateTime.now())
                 .updateDate(LocalDateTime.now())
