@@ -32,5 +32,19 @@
     <delete id="delete" parameterType="int">
         DELETE FROM car WHERE car_id=#{carId}
     </delete>
+    <select id="getpage" resultType="carDto">
+        SELECT * FROM car
+    </select>
+    <select id="getfindpage" resultType="carDto" parameterType="search">
+        SELECT * FROM car
+        <where>
+            <if test="keyword != null and keyword == 'name'">
+                AND car_name LIKE CONCAT('%', #{search},'%')
+            </if>
+            <if test="keyword != null and keyword == 'type'">
+                AND car_type LIKE CONCAT('%', #{search}, '%')
+            </if>
+        </where>
+    </select>
 
 </mapper>

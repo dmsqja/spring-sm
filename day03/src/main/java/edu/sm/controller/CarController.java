@@ -1,7 +1,9 @@
 package edu.sm.controller;
 
+import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.CarDto;
 import edu.sm.app.dto.CustDto;
+import edu.sm.app.dto.Search;
 import edu.sm.app.service.CarService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -79,6 +81,35 @@ public class CarController {
         model.addAttribute("cars", cars);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center",dir+"get");
+        return "index";
+    }
+    @RequestMapping("/getpage")
+    public String getpage(Model model, @RequestParam(value = "pageNo", defaultValue = "1") int pageNo) throws Exception  {
+        PageInfo<CarDto> p;
+        p = new PageInfo<>(carService.getPage(pageNo),5);
+        model.addAttribute("cpage",p);
+        model.addAttribute("target","/cust");
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center",dir+"page");
+        return "index";
+    }
+    @RequestMapping("/search")
+    public String search(Model model) {
+
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center",dir+"search");
+        return "index";
+    }
+    @RequestMapping("/findimpl")
+    public String findimpl(Model model, Search search, @RequestParam(value = "pageNo", defaultValue = "1") int pageNo) throws Exception {
+        PageInfo<CarDto> p;
+        p = new PageInfo<>(carService.getFindPage(pageNo, search), 3); // 3:하단 네비게이션 개수
+        model.addAttribute("cpage",p);
+        model.addAttribute("target","cust");
+
+        model.addAttribute("search",search);
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"search");
         return "index";
     }
 }
