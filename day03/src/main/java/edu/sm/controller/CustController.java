@@ -1,6 +1,8 @@
 package edu.sm.controller;
 
+import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.CustDto;
+import edu.sm.app.dto.Search;
 import edu.sm.app.service.CustService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +59,7 @@ public class CustController {
     }
     @RequestMapping("/get")
     public String get(Model model) throws Exception {
-        List<CustDto> custs = new ArrayList<>();
+        List<CustDto> custs = null;
         custs = custService.get();
 
         model.addAttribute("custs",custs);
@@ -65,6 +67,35 @@ public class CustController {
         model.addAttribute("center",dir+"get");
         return "index";
     }
+    @RequestMapping("/getpage")
+    public String getpage(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+        PageInfo<CustDto> p;
+        p = new PageInfo<>(custService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
+        model.addAttribute("cpage",p);
+        model.addAttribute("target","/cust");
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"page");
+        return "index";
+    }
+    @RequestMapping("/search")
+    public String search(Model model) {
 
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"search");
+        return "index";
+    }
+
+    @RequestMapping("/findimpl")
+    public String findimpl(Model model, Search search, @RequestParam(value = "pageNo", defaultValue = "1") int pageNo) throws Exception {
+        PageInfo<CustDto> p;
+        p = new PageInfo<>(custService.getFindPage(pageNo, search), 3); // 3:하단 네비게이션 개수
+        model.addAttribute("cpage",p);
+        model.addAttribute("target","cust");
+
+        model.addAttribute("search",search);
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"search");
+        return "index";
+    }
 
 }

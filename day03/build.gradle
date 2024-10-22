@@ -60,6 +60,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl
     implementation 'org.codehaus.jackson:jackson-core-asl:1.9.13'
 
+    // pageing
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.6'
+
     // test
     testImplementation 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
