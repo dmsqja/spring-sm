@@ -65,10 +65,17 @@ public class CarController {
         return "index";
     }
     @RequestMapping("/get")
-    public String get(Model model) throws Exception {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        List<CarDto> cars = carService.get();
-
+    public String get(Model model, @RequestParam(required = false) String name) throws Exception {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        List<CarDto> cars = carService.get();
+        List<CarDto> cars;
+        if (name != null && !name.trim().isEmpty()) {
+            // 검색어가 있는 경우
+            cars = carService.findByName(name);
+        } else {
+            // 검색어가 없는 경우 전체 목록
+            cars = carService.get();
+        }
         model.addAttribute("cars", cars);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center",dir+"get");

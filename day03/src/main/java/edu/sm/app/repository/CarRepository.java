@@ -3,6 +3,7 @@ package edu.sm.app.repository;
 import edu.sm.app.dto.CarDto;
 import edu.sm.app.frame.SMRepository;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
 @Repository
 @Mapper
 public interface CarRepository extends SMRepository<Integer, CarDto> {
-    List<CarDto> findByName(String name);
+    List<CarDto> findByName(@Param("carName")String name);
 }

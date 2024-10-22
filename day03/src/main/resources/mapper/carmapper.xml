@@ -26,7 +26,7 @@
             car_color = #{carColor},
             car_type = #{carType},
             car_img = #{carImg},
-            production_date = #{productionDate},
+            production_date = #{productionDate}
         WHERE car_id=#{carId}
     </update>
     <delete id="delete" parameterType="int">

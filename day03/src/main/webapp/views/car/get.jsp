@@ -6,11 +6,28 @@
   #car_img{
     width:200px;
   }
+  .search-box {
+       margin-bottom: 20px;
+  }
 </style>
 
 
 <div class="col-sm-10">
   <h2>Car Get Page</h2>
+
+  <div class="search-box">
+    <form class="form-inline" action="<c:url value='/car/get'/>">
+      <div class="input-group">
+        <input type="text" class="form-control" name="name" placeholder="차량 이름 검색" value="${param.name}">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="submit">검색</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
   <table class="table">
     <thead class="thead-dark">
       <tr>
