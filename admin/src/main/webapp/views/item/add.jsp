@@ -52,12 +52,12 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Price:</label>
-                        <input type="number"  class="form-control" id="price" placeholder="Enter name" name="itemPrice">
+                        <input type="number"  class="form-control" id="price" placeholder="Enter price" name="itemPrice">
 
                     </div>
                     <div class="form-group">
                         <label for="image">Image:</label>
-                        <input type="file"  class="form-control" id="image" placeholder="Enter name" name="image">
+                        <input type="file"  class="form-control" id="image" placeholder="Enter image" name="image">
 
                     </div>
 

@@ -41,7 +41,8 @@ public class ItemController {
     public String update(Model model, ItemDto itemDto) throws Exception {
         // id, name, price, imgname, or newimg
         itemService.modify(itemDto);
-        return "redirect:/item/detail?id="+itemDto.getItemId();
+//        return "redirect:/item/detail?id="+itemDto.getItemId();
+        return "redirect:/item/get";
     }
     @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") int id) throws Exception {

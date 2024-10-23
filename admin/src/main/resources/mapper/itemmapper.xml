@@ -17,10 +17,10 @@
         SELECT * FROM item
     </select>
     <insert id="insert" parameterType="itemDto">
-        INSERT INTO item VALUES (null, #{itemName},#{itemPrice},#{imgName}, SYSDATE(), #{updateDate})
+        INSERT INTO item VALUES (null, #{itemName},#{itemPrice},#{imgName}, SYSDATE(), SYSDATE())
     </insert>
     <update id="update" parameterType="itemDto">
-        UPDATE item SET item_name=#{itemName},item_price=#{itemPrice}, img_name=#{imgName} WHERE item_id=#{itemId}
+        UPDATE item SET item_name=#{itemName},item_price=#{itemPrice}, img_name=#{imgName}, update_date=SYSDATE() WHERE item_id=#{itemId}
     </update>
     <delete id="delete" parameterType="Integer">
         DELETE FROM item WHERE item_id=#{id}
