@@ -59,11 +59,14 @@
                                 <fmt:parseDate value="${ item.regDate }"
                                                pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
                                 <fmt:formatDate pattern="yyyy년MM월dd일 HH시mm분" value="${ parsedDateTime }" />
+
+
                             </td>
                             <td>
                                 <fmt:parseDate value="${ item.updateDate }"
                                                pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
                                 <fmt:formatDate pattern="yyyy년MM월dd일 HH시mm분" value="${ parsedDateTime }" />
+
                             </td>
                         </tr>
                     </c:forEach>
@@ -74,4 +77,3 @@
     </div>
 
 </div>
-

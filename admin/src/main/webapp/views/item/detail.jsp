@@ -6,11 +6,11 @@
 <script>
     let item_detail = {
         init:function(){
-            $('#item_delet_form > #btn_delete').click(()=>{
+            $('#item_update_form > #btn_delete').click(()=>{
 
                 let c = confirm('삭제하시겠습니까?');
                 if(c == true){
-                    let id = ${'#id'}.val();
+                    let id = $('#id').val();
                     location.href='<c:url value="/item/delete"/>'+'?id='+id;
                 }
             });
