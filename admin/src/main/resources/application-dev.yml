@@ -34,6 +34,9 @@ logging:
 
 # 5.Application Environment Setting
 app:
+  url:
+#    server-url: http://172.16.21.91:81
+    server-url: http://127.0.0.1:81
   dir:
     imgdir: file:///c:/springsm/imgs/
     # logdir: /root/users/project/logs 리눅스에서는 이렇게 쓰면 됨
