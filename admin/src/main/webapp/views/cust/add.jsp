@@ -7,9 +7,9 @@
 
             $('#add_form > #btn_add').click(()=>{
 
-                let c = confirm('등록하기겠습니까?');
+                let c = confirm('등록하시겠습니까?');
                 if(c == true){
-                   this.send();
+                    this.send();
                 }
             });
         },
@@ -43,17 +43,17 @@
                 <form id="add_form">
                     <div class="form-group">
                         <label for="id">ID:</label>
-                        <input type="text"  class="form-control" id="id" placeholder="Enter id" name="id">
+                        <input type="text"  class="form-control" id="id" placeholder="Enter id" name="custId">
 
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password"   class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <input type="password"   class="form-control" id="pwd" placeholder="Enter password" name="custPwd">
 
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="custName">
 
                     </div>
                     <button id="btn_add" type="button" class="btn btn-primary">Add</button>
@@ -64,5 +64,3 @@
     </div>
 
 </div>
-
-

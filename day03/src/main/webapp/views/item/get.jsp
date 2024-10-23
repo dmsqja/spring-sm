@@ -25,7 +25,7 @@
     <tbody>
     <c:forEach var="c" items="${items}">
       <tr>
-        <td><img id="item_img" src="<c:url value="/img"/>/${c.imgname}"></td>
+        <td>${c.imgname}"</td>  
         <td>${c.id}</td>
         <td>${c.name}</td>
         <td><fmt:formatNumber type="number" pattern="###,###원" value="${c.price}" />

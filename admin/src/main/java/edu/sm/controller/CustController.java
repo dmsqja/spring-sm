@@ -38,7 +38,7 @@ public class CustController {
     public String add(Model model){
 
         model.addAttribute("center",dir+"add");
-        return "index";
+        return "redirect:/cust/get";
     }
 
     @RequestMapping("/detail")

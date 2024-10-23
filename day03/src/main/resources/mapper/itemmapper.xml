@@ -17,6 +17,23 @@
         SELECT * FROM item
     </select>
 
+
+    <select id="getpage" resultType="itemDto">
+        SELECT * FROM item
+    </select>
+
+    <select id="getfindpage" resultType="itemDto" parameterType="search">
+        SELECT * FROM item
+        <where>
+            <if test="keyword != null and  keyword == 'id'">
+                AND item_id LIKE CONCAT('%', #{search} ,'%')
+            </if>
+            <if test="keyword != null and keyword == 'name'">
+                AND item_name LIKE CONCAT('%', #{search} ,'%')
+            </if>
+        </where>
+    </select>
+
     <insert id="insert" parameterType="itemDto">
         INSERT INTO item (item_name, item_price, img_name, reg_date, update_date)
         VALUES (#{itemName},#{itemPrice},#{imgName},#{regDate},#{updateDate})
