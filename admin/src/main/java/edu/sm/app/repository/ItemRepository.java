@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 @Mapper
-public interface ItemRepository extends SMRepository<String, ItemDto> {
+public interface ItemRepository extends SMRepository<Integer, ItemDto> {
     List<ItemDto> findByName(String name);
 }
