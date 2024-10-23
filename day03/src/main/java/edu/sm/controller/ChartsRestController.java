@@ -16,7 +16,7 @@ import java.util.Random;
 @RestController
 @Slf4j
 @RequestMapping("/charts")
-public class ChartRestController {
+public class ChartsRestController {
 
     @Value("${app.dir.readlogdir}")
     String readlogdir;  // 컨트롤러가 실행이 되면서 자동으로 세팅이 됨
