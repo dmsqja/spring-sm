@@ -79,8 +79,8 @@
                         </h6>
                     </div>
                     <div class="form-group">
-                       <img src="<c:url value="/imgs"/>/${item.imgName}">
-                       <input type="hidden" name="imgName" value="${item.imgName}"/>
+                        <img src="<c:url value="/imgs"/>/${item.imgName}">
+                        <input type="hidden" name="imgName" value="${item.imgName}"/>
                     </div>
                     <div class="form-group">
                         <label for="newimage">New Image:</label>
@@ -97,5 +97,3 @@
     </div>
 
 </div>
-
-
