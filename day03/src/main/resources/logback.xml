@@ -40,12 +40,30 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="FILE3" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_DIR}/power.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_DIR}/power.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
 
 
-<!--    <logger name="org.springframework.web" level="DEBUG">-->
-<!--        <appender-ref ref="STDOUT" />-->
-<!--        <appender-ref ref="FILE" />-->
-<!--    </logger>-->
+
+    <!--    <logger name="org.springframework.web" level="DEBUG">-->
+    <!--        <appender-ref ref="STDOUT" />-->
+    <!--        <appender-ref ref="FILE" />-->
+    <!--    </logger>-->
+    <logger name="edu.sm.controller.IotRestController" level="INFO">
+        <appender-ref ref="FILE3" />
+    </logger>
+
     <logger name="edu.sm.controller.JsController" level="INFO">
         <appender-ref ref="FILE2" />
     </logger>
