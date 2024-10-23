@@ -35,3 +35,11 @@ out/
 
 ### VS Code ###
 .vscode/
+
+gradlew.bat
+settings.gradle
+build
+.gradle
+day03/src/main/java/edu/sm/Day03Application.java
+day03/src/main/java/edu/sm/ServletInitializer.java
+day03/src/test/java/edu/sm/Day03ApplicationTests.java
