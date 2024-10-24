@@ -14,9 +14,14 @@
     </select>
 
     <select id="select" resultType="itemDto">
-        SELECT * FROM item
+        SELECT item_id as itemId,
+               item_name as itemName,
+               item_price as itemPrice,
+               img_name as imgName,
+               reg_date as regDate,
+               update_date as updateDate
+        FROM item
     </select>
-
 
     <select id="getpage" resultType="itemDto">
         SELECT * FROM item

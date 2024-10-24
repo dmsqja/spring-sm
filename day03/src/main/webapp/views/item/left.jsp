@@ -6,12 +6,6 @@
   <h3>Item</h3>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/item/add"/> ">Add</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/item/get"/>">Get</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" href="<c:url value="/item/getpage"/>">GetPage</a>
     </li>
     <li class="nav-item">

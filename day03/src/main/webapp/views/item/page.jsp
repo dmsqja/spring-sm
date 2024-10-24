@@ -12,17 +12,19 @@
       <th>Id</th>
       <th>Name</th>
       <th>Price</th>
-      <th>RegDate</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="c" items="${cpage.getList()}">
       <tr>
-        <td>${c.imgName}</td>
+        <td>
+          <c:if test="${c.imgName != null}">
+            <img id="item_img" src="/imgs/${c.imgName}">
+          </c:if>
+        </td>
         <td><a href="/item/detail?id=${c.itemId}">${c.itemId}</a></td>
         <td>${c.itemName}</td>
         <td>${c.itemPrice}</td>
-        <td>${c.regDate}</td>
       </tr>
     </c:forEach>
     </tbody>

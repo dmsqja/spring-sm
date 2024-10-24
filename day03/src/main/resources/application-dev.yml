@@ -5,6 +5,9 @@ server:
     encoding:
       charset: UTF-8
       force: true
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 # 2. SpringBoot Environment Setting
 spring:
@@ -19,6 +22,10 @@ spring:
     #url: jdbc:mysql://127.0.0.1:3306/smdb?characterEncoding=utf8
     username: ENC(MokXTcbdg63+pCxPHltvsw==)
     password: ENC(BJwY7Bkfxf4RTbprXuMHwQ==)
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 # 3. Mybatis Setting
 mybatis:
@@ -39,3 +46,4 @@ app:
     # logdir: /root/users/project/logs 리눅스에서는 이렇게 쓰면 됨
     logdir: file:///c:/springsm/logs/ #저장할때는 앞에 file이 붙어야함
     readlogdir: c:/springsm/logs/ # 이 위치에서 log를 가져온다 이거임
+    uploadimgdir: c:/springsm/imgs/
