@@ -88,7 +88,7 @@ public class CarController {
         PageInfo<CarDto> p;
         p = new PageInfo<>(carService.getPage(pageNo),5);
         model.addAttribute("cpage",p);
-        model.addAttribute("target","/cust");
+        model.addAttribute("target","/car");
         model.addAttribute("left", dir+"left");
         model.addAttribute("center",dir+"page");
         return "index";
@@ -105,7 +105,7 @@ public class CarController {
         PageInfo<CarDto> p;
         p = new PageInfo<>(carService.getFindPage(pageNo, search), 3); // 3:하단 네비게이션 개수
         model.addAttribute("cpage",p);
-        model.addAttribute("target","cust");
+        model.addAttribute("target","car");
 
         model.addAttribute("search",search);
         model.addAttribute("left",dir+"left");

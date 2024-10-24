@@ -1,7 +1,10 @@
 package edu.sm.app.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import edu.sm.app.dto.CartDto;
 import edu.sm.app.dto.ItemDto;
+import edu.sm.app.dto.Search;
 import edu.sm.app.frame.SMService;
 import edu.sm.app.repository.CartRepository;
 import edu.sm.app.repository.ItemRepository;
@@ -47,4 +50,13 @@ public class CartService implements SMService<CartDto, CartDto> {
 
     }
 
+    public Page<CartDto> getPage(int pageNo) throws Exception {
+        PageHelper.startPage(pageNo,5);
+        return cartRepository.getpage();
+    }
+
+    public Page<CartDto> getFindPage(int pageNo, Search search) throws Exception {
+        PageHelper.startPage(pageNo,3);
+        return cartRepository.getfindpage(search);
+    }
 }

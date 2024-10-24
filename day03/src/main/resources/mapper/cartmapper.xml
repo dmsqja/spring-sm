@@ -20,7 +20,7 @@
     <!--    </resultMap>-->
     <select id="findByName" resultType="cartDto" parameterType="String">
         select
-            cart_user_id,
+            cart_cust_id,
             cart_item_id,
             cart_count,
             cart_reg_date,
@@ -30,16 +30,16 @@
         from cart as c
                  inner join item i on c.cart_item_id = i.item_id
         where i.item_name LIKE CONCAT('%', #{itemName}, '%')
-          and c.cart_user_id = #{cartUserId}
+          and c.cart_cust_id = #{cartCustId}
     </select>
 
     <select id="selectOne" parameterType="cartDto" resultType="cartDto">
-        SELECT * FROM cart WHERE cart_user_id=#{cartUserId}
+        SELECT * FROM cart WHERE cart_Cust_id=#{cartCustId}
                              and  cart_item_id=#{cartItemId}
     </select>
     <select id="select" resultType="cartDto" fetchSize="100">
         select
-            cart_user_id,
+            cart_cust_id,
             cart_item_id,
             cart_count,
             cart_reg_date,
@@ -50,15 +50,66 @@
                  inner join item i on c.cart_item_id = i.item_id
     </select>
     <insert id="insert" parameterType="cartDto">
-        insert into cart values (#{cartUserId},#{cartItemId},#{cartCount},SYSDATE() )
-            on duplicate key update cart_count= cart_count+#{cartCount}
+        insert into cart(
+                         cart_cust_id,
+                         cart_item_id,
+                         cart_count,
+                         cart_reg_date,
+                         item_name,
+                         item_price,
+                         img_name
+        ) values(
+                 #{cartCustId},
+                 #{cartItemId},
+                 #{cartCount},
+                 SYSDATE(),
+                 (SELECT item_name FROM item WHERE item_id = #{cartItemId}),
+                 (SELECT item_price FROM item WHERE item_id = #{cartItemId}),
+                 (SELECT img_name FROM item WHERE item_id = #{cartItemId})
+        )
+        on duplicate key update
+                         cart_count = cart_count + #{cartCount}
     </insert>
     <update id="update" parameterType="cartDto">
-        UPDATE cart SET cart_count=#{cartCount} WHERE cart_user_id=#{cartUserId}
+        UPDATE cart SET cart_count=#{cartCount} WHERE cart_cust_id=#{cartCustId}
                                                   and  cart_item_id=#{cartItemId}
     </update>
     <delete id="delete" parameterType="cartDto">
-        DELETE FROM cart WHERE cart_user_id=#{cartUserId}
+        DELETE FROM cart WHERE cart_cust_id=#{cartCustId}
                            and  cart_item_id=#{cartItemId}
     </delete>
+    <select id="getpage" resultType="cartDto">
+        select
+            cart_cust_id,
+            cart_item_id,
+            cart_count,
+            cart_reg_date,
+            item_name,
+            item_price,
+            img_name
+        from cart as c
+                 inner join item i on c.cart_item_id = i.item_id
+        order by cart_reg_date desc
+    </select>
+    <select id="getfindpage" parameterType="search" resultType="cartDto">
+        select
+        cart_cust_id,
+        cart_item_id,
+        cart_count,
+        cart_reg_date,
+        item_name,
+        item_price,
+        img_name
+        from cart as c
+        inner join item i on c.cart_item_id = i.item_id
+        <where>
+            <if test="keyword != null and keyword == 'custid'">
+                cart_cust_id LIKE CONCAT('%', #{search}, '%')
+            </if>
+            <if test="keyword != null and keyword == 'itemid'">
+                cart_item_id LIKE CONCAT('%', #{search}, '%')
+            </if>
+        </where>
+        order by cart_reg_date desc
+    </select>
 </mapper>

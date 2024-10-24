@@ -41,7 +41,7 @@
     <c:choose>
         <c:when test="${sessionScope.loginid == null}">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/login"/> ">Login</a>
+                <a class="nav-link" href="<c:url value="/login"/>">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/register"/>">Register</a>
@@ -90,6 +90,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/car"/> ">Car</a>
+                </li>
+                <li calss="nav-item">
+                    <a class="nav-link" href="<c:url value="/cart"/> ">Cart</a>
                 </li>
             </c:if>
         </ul>

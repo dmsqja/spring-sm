@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartDto {
-    private String cartUserId;
+    private String cartCustId;
     private int cartItemId;
     private int cartCount;
     private LocalDateTime cartRegDate;
