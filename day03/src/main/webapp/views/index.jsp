@@ -91,8 +91,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/car"/> ">Car</a>
                 </li>
-                <li calss="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/cart"/> ">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/webcam"/> ">WebCam</a>
                 </li>
             </c:if>
         </ul>

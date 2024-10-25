@@ -6,19 +6,28 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import ch.qos.logback.classic.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadUtil {
-    public static void saveFile(MultipartFile mf, String dir, String filename) {
+    public  static void deleteFile(String filename, String dir) throws IOException {
+        Path filePath = Paths.get(dir+filename);
+        Files.delete(filePath);
+    }
+    public  static void saveFile(MultipartFile mf, String dir) throws IOException {
+        byte [] data;
+        String imgname = mf.getOriginalFilename();
+        System.out.println("----------------"+imgname);
         try {
-            byte[] data = mf.getBytes();
-            Path path = Paths.get(dir + "/" + filename);
-            Files.write(path, data);
-        } catch(Exception e) {
-            Logger log = null;
-            log.error("파일 저장 실패: " + e.getMessage());
-            throw new RuntimeException("파일 저장 중 오류 발생");
+            data = mf.getBytes();
+            FileOutputStream fo =
+                    new FileOutputStream(dir+imgname);
+            fo.write(data);
+            fo.close();
+            System.out.println("----------------OK");
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            throw e;
         }
     }
 }
