@@ -39,36 +39,30 @@
     </select>
     <select id="select" resultType="cartDto" fetchSize="100">
         select
-            cart_cust_id,
-            cart_item_id,
-            cart_count,
-            cart_reg_date,
-            item_name,
-            item_price,
-            img_name
+            c.cart_cust_id,
+            c.cart_item_id,
+            c.cart_count,
+            c.cart_reg_date,
+            i.item_name,
+            i.item_price,
+            i.img_name
         from cart as c
-                 inner join item i on c.cart_item_id = i.item_id
+        inner join item i on c.cart_item_id = i.item_id
     </select>
     <insert id="insert" parameterType="cartDto">
         insert into cart(
-                         cart_cust_id,
-                         cart_item_id,
-                         cart_count,
-                         cart_reg_date,
-                         item_name,
-                         item_price,
-                         img_name
+             cart_cust_id,
+             cart_item_id,
+             cart_count,
+             cart_reg_date
         ) values(
-                 #{cartCustId},
-                 #{cartItemId},
-                 #{cartCount},
-                 SYSDATE(),
-                 (SELECT item_name FROM item WHERE item_id = #{cartItemId}),
-                 (SELECT item_price FROM item WHERE item_id = #{cartItemId}),
-                 (SELECT img_name FROM item WHERE item_id = #{cartItemId})
+             #{cartCustId},
+             #{cartItemId},
+             #{cartCount},
+             SYSDATE()
         )
         on duplicate key update
-                         cart_count = cart_count + #{cartCount}
+             cart_count = cart_count + #{cartCount}
     </insert>
     <update id="update" parameterType="cartDto">
         UPDATE cart SET cart_count=#{cartCount} WHERE cart_cust_id=#{cartCustId}
@@ -80,26 +74,26 @@
     </delete>
     <select id="getpage" resultType="cartDto">
         select
-            cart_cust_id,
-            cart_item_id,
-            cart_count,
-            cart_reg_date,
-            item_name,
-            item_price,
-            img_name
+            c.cart_cust_id,
+            c.cart_item_id,
+            c.cart_count,
+            c.cart_reg_date,
+            i.item_name,
+            i.item_price,
+            i.img_name
         from cart as c
-                 inner join item i on c.cart_item_id = i.item_id
+        inner join item i on c.cart_item_id = i.item_id
         order by cart_reg_date desc
     </select>
     <select id="getfindpage" parameterType="search" resultType="cartDto">
         select
-        cart_cust_id,
-        cart_item_id,
-        cart_count,
-        cart_reg_date,
-        item_name,
-        item_price,
-        img_name
+        c.cart_cust_id,
+        c.cart_item_id,
+        c.cart_count,
+        c.cart_reg_date,
+        i.item_name,
+        i.item_price,
+        i.img_name
         from cart as c
         inner join item i on c.cart_item_id = i.item_id
         <where>

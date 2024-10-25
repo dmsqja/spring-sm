@@ -14,7 +14,7 @@
       <th>Reg_Date</th>
       <th>Item_Name</th>
       <th>Item_Price</th>
-      <th>Img_Name</th>
+      <th>Image</th>
     </tr>
     </thead>
     <tbody>
@@ -26,7 +26,14 @@
         <td>${c.cartRegDate}</td>
         <td>${c.itemName}</td>
         <td>${c.itemPrice}</td>
-        <td>${c.imgName}</td>
+        <td>
+          <c:if test="${not empty c.imgName}">
+            <img src="/imgs/${c.imaName}" alt="${c.itemName}" style="width: 100px; height: 100px;">
+          </c:if>
+          <c:if test="${empty c.imgName}">
+            No Image
+          </c:if>
+        </td>
       </tr>
     </c:forEach>
     </tbody>
