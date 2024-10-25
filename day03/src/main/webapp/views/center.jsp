@@ -7,7 +7,9 @@
       $.ajax({
         url:'<c:url value="/wh"/>',
         success:(result)=>{
-          alert(result);
+          // alert(result);
+          let wtext = result.response.body.items.item[0].wfSv;
+          $('#wh').text(wtext);
         }
       });
     }
