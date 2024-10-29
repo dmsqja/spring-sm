@@ -50,3 +50,5 @@ app:
 
   key:
     wkey: ENC(sq0pNPS6LwW7g36t1uSsRRJPSqwSaaUWMUf0R7JdQ8M6ReBGAUb+fnpF7BbINVvuZfJD6W+ij+ac5Ku+s8VixucDZ3h5LYyjYweOokHWohVy56lgFVpv3rdox37388fIXer/PmZ+Yh4vXCMiZZpB4A==)
+    algo: PBEWithMD5AndDES
+    skey: mykey

@@ -19,7 +19,7 @@ public class InsertTest {
     @Test
     void insertTest() {
         CartDto cartDto =
-                CartDto.builder().cartCount(2).cartUserId("id02").cartItemId(2).build();
+                CartDto.builder().cartCount(2).cartItemId(1).cartItemId(2).build();
         try {
             cartService.add(cartDto);
         } catch (Exception e) {

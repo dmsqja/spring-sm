@@ -16,7 +16,7 @@ class SelectOneTest {
 
     @Test
     void contextLoads() {
-        CartDto cartDto = CartDto.builder().cartUserId("id01").cartItemId(1).build();
+        CartDto cartDto = CartDto.builder().cartItemId(1).cartItemId(1).build();
         try {
             cartService.get(cartDto);
         } catch (Exception e) {

@@ -17,7 +17,7 @@ class FindByNameTest {
     @Test
     void contextLoads() {
         CartDto cartDto = CartDto.builder()
-                .cartUserId("id01")
+                .cartItemId(1)
                 .itemName("pan")
                 .build();
         try {

@@ -19,7 +19,7 @@ class UpdateTest {
     void contextLoads() {
 
         CartDto cartDto = CartDto.builder()
-                .cartUserId("id01")
+                .cartItemId(1)
                 .cartItemId(1)
                 .cartCount(10)
                 .build();

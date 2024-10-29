@@ -18,7 +18,7 @@ class DeleteTest {
     void contextLoads() {
 
         CartDto cartDto = CartDto.builder()
-                .cartUserId("id01")
+                .cartItemId(1)
                 .cartItemId(1)
                 .build();
         try {
