@@ -1,12 +1,12 @@
 package edu.sm.util;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadUtil {
     public  static void deleteFile(String filename, String dir) throws IOException {

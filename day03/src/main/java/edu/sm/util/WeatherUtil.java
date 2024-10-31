@@ -81,7 +81,7 @@ public class WeatherUtil {
         }
         rd.close();
         conn.disconnect();
-        //System.out.println(sb.toString());
+        System.out.println(sb.toString());
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(sb.toString());
         return jsonObject;

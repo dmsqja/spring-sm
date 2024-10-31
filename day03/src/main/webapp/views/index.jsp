@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,8 +32,7 @@
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <h1><spring:message code="site.title"/></h1>
-    <h1><spring:message code="site.tel" arguments="041-312-3234"/></h1>
+    <h1>My First Bootstrap 4 Page</h1>
     <img src="<c:url value="/img/sm.jpg"/> ">
     <img src="<c:url value="/imgs/car.jpg"/> ">
     <p>Resize this responsive page to see the effect!</p>
@@ -43,7 +41,7 @@
     <c:choose>
         <c:when test="${sessionScope.loginid == null}">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/login"/>">Login</a>
+                <a class="nav-link" href="<c:url value="/login"/> ">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/register"/>">Register</a>
@@ -89,12 +87,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/car"/> ">Car</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/cart"/> ">Cart</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/webcam"/> ">WebCam</a>
