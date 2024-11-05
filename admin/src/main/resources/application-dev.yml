@@ -37,8 +37,8 @@ app:
   url:
 #    server-url: http://172.16.21.91:81
 #    server-url: http://127.0.0.1:81
-#    server-url: http://210.119.34.233:81
-    server-url: http://210.119.34.77:81
+    server-url: http://210.119.34.233:81
+#    server-url: http://210.119.34.77:81
   dir:
     imgdir: file:///c:/springsm/imgs/
     uploadimgdir: c:/springsm/imgs/

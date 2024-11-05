@@ -15,12 +15,15 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <%--HighCharts Lib  start --%>
+    <%--HighCharts Lib--%>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <%--HighCharts Lib  end --%>
+
+    <%-- Web Socket Lib--%>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 
     <style>
         .fakeimg {
@@ -90,6 +93,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/webcam"/> ">WebCam</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/websocket"/> ">WebSocket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/chat"/> ">Chat</a>
                 </li>
             </c:if>
         </ul>
